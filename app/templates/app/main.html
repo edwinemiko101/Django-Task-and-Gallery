@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TO DO LIST</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .body {
+        background-color: #fff;
+        font-family: "Lobster", cursive;
+        padding-top: 50px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Raleway", sans-serif;
+      }
+
+      a,
+      p {
+        color: #4b5156;
+      }
+
+      .container {
+        max-width: 850px;
+        margin: auto;
+        background-color: #fff;
+        -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+        box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+        background: linear-gradient(
+          90deg,
+          #eea390 0%,
+          #008080 43%,
+          #008080 100%
+        );
+      }
+
+      .header a {
+        color: rgb(247, 247, 247);
+        text-decoration: none;
+      }
+
+      .card-header {
+        color: black;
+      }
+
+      .task-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid rgb(226, 226, 226);
+      }
+
+      .task-title {
+        display: flex;
+      }
+
+      .task-title a {
+        text-decoration: none;
+        color: #4b5156;
+        margin-left: 10px;
+      }
+
+      .task-complete-icon {
+        height: 20px;
+        width: 20px;
+        background-color: rgb(105, 192, 105);
+        border-radius: 50%;
+      }
+
+      .task-incomplete-icon {
+        height: 20px;
+        width: 20px;
+        background-color: rgb(218, 218, 218);
+        border-radius: 50%;
+      }
+
+      .delete-task-link {
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 22px;
+        color: #ff0000;
+        line-height: 0;
+      }
+
+      #search-add-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      #add-task-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 32px;
+        text-shadow: 1px 1px #006400;
+        border: 1px solid #008080;
+        border-radius: 10px;
+        background-color: #008080;
+        padding: 5px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      textarea {
+        border: 1px solid #008080;
+        border-radius: 10px;
+        padding: 10px;
+        width: 90%;
+      }
+
+      label {
+        padding-top: 10px !important;
+        display: block;
+      }
+
+      .button {
+        border: 1px solid #008080;
+        border-radius: 10px;
+        background-color: #fff;
+        color: #008080;
+        padding: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .form-body {
+        padding: 20px;
+      }
+
+      .small {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        background: linear-gradient(
+          90deg,
+          #008080 0%,
+          #008080 43%,
+          #eea390 100%
+        );
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 5px 5px 5px 5px;
+      }
+
+      .image-placeholder {
+        background-color: #eee;
+        display: flex;
+        height: 180px;
+        margin: 5px;
+        width: 180px;
+      }
+
+      .image-placeholder > h4 {
+        align-self: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      .content-section {
+        background: #ffffff;
+        padding: 5px 5px;
+        border: 1px solid #dddddd;
+        border-radius: 1px;
+        margin-bottom: 1px;
+      }
+
+      .account-img {
+        height: 200px;
+        width: 200px;
+        display: flex;
+        margin-right: 1px;
+        margin-bottom: 1px;
+      }
+
+      .nav-container {
+        background: #ffffff;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .nav {
+        background-color: #333;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 10px;
+      }
+
+      .nav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .nav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .nav a.active {
+        background-color: #008080;
+        color: white;
+      }
+
+      .image-thumbail {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .list-group-item a {
+        text-decoration: none;
+        color: #008080;
+      }
+
+      .table th,
+      .table td {
+        font-size: 14px;
+        padding: 5px 10px;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">{% block content %} {% endblock content %}</div>
+  </body>
+</html>
